@@ -1,0 +1,27 @@
+{
+  "name": "dsh-codex-oauth",
+  "version": "0.4.6",
+  "description": "ChatGPT subscription models, usage limits and image generation for DeepSeek Harness",
+  "type": "module",
+  "main": "index.js",
+  "exports": { ".": "./index.js", "./client": "./ui.js", "./package.json": "./package.json" },
+  "files": ["*.js", "cordis.patch.yml", "README.md"],
+  "scripts": { "test": "node --test test/*.test.js" },
+  "engines": { "node": ">=22.19.0" },
+  "license": "MIT",
+  "keywords": ["dsh-plugin", "deepseek-harness", "codex", "oauth"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-client-ui-settings", "@deepseek-ai/dsh-client-ui-model-selection"] }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/schemastery": "^3.18.2",
+    "@deepseek-ai/dsh-llm": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-llm-pi-ai": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-tools": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-settings": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-credentials": "0.1.5-rc.2",
+    "@earendil-works/pi-ai": "^0.85.1"
+  }
+}

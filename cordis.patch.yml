@@ -1,0 +1,8 @@
+- id: llm-pi-ai
+  config:
+    providers:
+      openai-codex:
+        displayName: ChatGPT subscription
+- insert:
+    - id: codex-oauth
+      name: dsh-codex-oauth
